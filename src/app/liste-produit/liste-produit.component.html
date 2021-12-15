@@ -1,0 +1,33 @@
+<div class="container">
+  <p>liste-produit works!</p>
+Mote clé 
+<input type="text" class="form-control rounded" [(ngModel)]="abcd">
+<br>
+<br>
+<table border=1 *ngIf="productsF;else vide" class="table">
+  <tr>
+    <th>
+    <button (click)="affiche()" class="btn btn-primary">{{nomb}}</button>
+    </th>
+    <th>id</th>
+    <th>nom</th>
+    <th>prix</th>
+    <th>quantite</th>
+    <th>supprimer</th>
+    <th>editer</th>
+    
+  </tr>
+  <tr *ngFor="let a of productsF" [ngStyle]="{color:getcolor(a.quantite)}">
+    <th><img *ngIf="nomb=='masquer'" [src]=a.urlImg width="50" height="50"></th>
+    <th>{{a.id}}</th>
+    <th><a [routerLink]="[a.id]">{{a.nom}}</a></th>
+    <th>{{a.prix}}</th>
+    <th>{{a.quantite}}</th>
+    <th><button class="btn btn-danger"  (click)="supprimer(a.id)">supprimer</button></th>
+    <th><a class="fa fa-edit" [routerLink]="['/FomUpdate',a.id]">edite</a></th>
+    
+  </tr>
+</table>
+<ng-template #vide><h2 style="color: red;">tableau vide</h2></ng-template>
+
+</div>

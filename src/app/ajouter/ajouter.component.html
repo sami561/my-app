@@ -1,0 +1,26 @@
+<form #f="ngForm" (ngSubmit)="AjouterProd(f)" >
+  <div class="container">
+    <h1 style="color: brown; font-family:Georgia, 'Times New Roman', Times, serif ">Ajouter Produit</h1>
+   <hr>
+
+    <label for="nom"><b>nom produit</b></label>
+    <input type="text" placeholder="Entrer nom produit" name="nom" id="nom" ngModel required #nom="ngModel"  >
+    <span style="color: red" *ngIf="!nom.valid && nom.touched"> Entrez le nom </span>      <br> 
+    <br>
+    <label for="prix"><b>Prix</b></label>
+    <input type="number" placeholder="Entrer le prix" name="prix" id="prix" ngModel required #prix="ngModel">
+    <span style="color: red" *ngIf="!prix.valid && prix.touched "> Entrer le prix</span>
+
+    <br>
+    <label for="quantite"><b>quantite</b></label>
+    <input type="number" placeholder="enter quantite" name="quantite" id="quantite" ngModel required #quantite="ngModel">
+    <span style="color: red" *ngIf="!quantite.valid && quantite.touched "> Entrer la quantite</span>
+
+    <hr>
+
+
+    <button type="submit" class="registerbtn" [disabled]="!f.valid " >Ajouter</button>
+  </div>
+
+
+</form>

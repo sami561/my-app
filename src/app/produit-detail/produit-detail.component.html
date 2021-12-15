@@ -1,0 +1,7 @@
+<div *ngIf=product>
+    {{product.nom}}
+    {{product.quantite}}
+    <h4 style="color:green" *ngIf="product.quantite;else non">en stock</h4>
+    <button class="btn btn-primary"(click)=retour()>back</button>
+    <ng-template #non><h4 style="color: red;">hors stock</h4></ng-template>
+</div>

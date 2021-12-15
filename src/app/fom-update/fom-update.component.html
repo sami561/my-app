@@ -1,0 +1,26 @@
+<form #f="ngForm" (ngSubmit)="ModifierProd()" *ngIf="produit">
+    <div class="container">
+      <h1 style="color: brown; font-family:Georgia, 'Times New Roman', Times, serif ">editer Produit</h1>
+     <hr>
+
+      <label for="nom"><b>nom produit</b></label>
+      <input type="text" placeholder="Entrer nom produit" name="nom"    #nom="ngModel" required [(ngModel)]=produit.nom  >
+      <span style="color: red" *ngIf="!nom.valid && nom.touched"> Entrez le nom </span>
+      <br>
+      <label for="prix"><b>Prix</b></label>
+      <input type="number" placeholder="Entrer le prix" name="prix" id="prix"      #prix="ngModel" required [(ngModel)]=produit.prix >
+      <span style="color: red" *ngIf="!prix.valid && prix.touched "> Entrer le prix</span>
+
+      <br>
+      <label for="quantite"><b>quantite</b></label>
+      <input type="number" placeholder="enter quantite" name="quantite" id="quantite"     #quantite="ngModel"  required  [(ngModel)]=produit.quantite >
+      <span style="color: red" *ngIf="!quantite.valid && quantite.touched "> Entrer la quantite</span>
+
+      <hr>
+
+
+      <button  [disabled]=!f.valid  class="btn btn-success" >editer</button>
+    </div>
+
+
+  </form>

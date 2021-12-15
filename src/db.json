@@ -1,0 +1,17 @@
+{
+  "Produits": [
+    {
+      "id": 1,
+      "nom": "pc",
+      "prix": 1500,
+      "quantite": 10,
+      "nomImg": ""
+    },
+    {
+      "nom": "soris",
+      "prix": 1,
+      "quantite": 2,
+      "id": 2
+    }
+  ]
+}
